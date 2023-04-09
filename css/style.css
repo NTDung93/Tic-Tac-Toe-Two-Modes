@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: bisque;
+  background-image: linear-gradient(35.2deg, rgb(0, 119, 182) -18.7%, rgb(8, 24, 68) 54.3%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .startGameMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  caret-color: transparent;
+}
+.container .startGameMenu p {
+  margin-bottom: 3rem;
+}
+.container .startGameMenu .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 3.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  caret-color: transparent;
+}
+.container .startGameMenu .btn:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.container .startGameMenu .btn:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #008fb3;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.container .startGameMenu .btn:hover {
+  color: #fff;
+}
+.container .startGameMenu .btn:hover:before {
+  width: 100%;
+}
+.container .dpNone {
+  display: none !important;
+}
+.container .gameZone {
+  border: solid 0.01rem black;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  caret-color: transparent;
+}
+.container .turn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.8rem;
+  caret-color: transparent;
+}
+.container img {
+  width: 4rem;
+  height: 4rem;
+}
+.container .restart {
+  display: none;
+}
+.container .restart__btn {
+  width: 6rem;
+  height: 3rem;
+  background-image: linear-gradient(67.1deg, rgb(26, 44, 129) 7.3%, rgb(38, 206, 205) 89.3%);
+  border: 0.1rem solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  caret-color: transparent;
+  transition: 0.5s;
+}
+.container .restart__btn p {
+  color: white;
+}
+.container .restart__btn:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(109.6deg, rgb(61, 245, 167) 11.2%, rgb(9, 111, 224) 91.1%);
+  border: none;
+}
+.container .restart__btn:hover p {
+  color: white;
+}
+
+.singleSquare {
+  height: 5rem;
+  width: 5rem;
+  background-color: azure;
+  border: solid 0.01rem black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  caret-color: transparent;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

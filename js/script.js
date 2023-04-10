@@ -64,8 +64,6 @@ function handleClick(e) {
 }
 
 //mode 2: vs computer mode
-// const cellMode2 = [0, 1, 2, 3, 4, 5, 6, 7, 8] //chỉ để lấy index, còn bảng tạo ra vẫn build từ mảng cells ở trên cùng
-
 function handleClickComp(e) {
     const square = document.createElement('div')
     square.classList.add(go)
@@ -94,48 +92,7 @@ function handleClickComp(e) {
     } else {
         computerMove()
     }
-    // //lấy dc index cái cell mà player vừa click
-    // const valP = e.target.id
-    // console.log(e.target.id);
-    // const cellP = cellMode2.indexOf(valP)
-
-    // //xóa phần tử có index cellP trong mảng cellMode2
-    // console.log(cellMode2);
-    // cellMode2.splice(cellP, 1);
-    // console.log(cellMode2);
-
-    // //computer turn 
-    // compChoice(cellMode2, go, gogo)
 }
-
-// function compChoice(arr) {
-//     //get random index from arr 
-//     const randIdx = Math.floor(Math.random() * arr.length);
-//     console.log(randIdx);
-//     // const cellComp = document.getElementById(randIdx) //dom to cell with id equal to randIdx
-
-//     // //display the content of the selected cell
-//     // const square = document.createElement('div')
-//     // square.classList.add(go)
-//     // if (go === "circle") {
-//     //     square.innerHTML = `  
-//     //         <img src="/image/dogecoin-logo.png" alt="" />
-//     //     `
-//     // } else {
-//     //     square.innerHTML = `  
-//     //         <img src="/image/salad-cat.png" alt="" />
-//     //     `
-//     // }
-//     // cellComp.target.append(square)
-
-//     // //
-//     // cellMode2.splice(randIdx, 1);
-
-//     // go = (go === "circle" ? "cross" : "circle")
-//     // gogo = (go === "circle" ? "doge" : "cat")
-//     // displayTurn.textContent = "it is " + gogo + "'s turn."
-//     // checkWin()
-// }
 
 function computerMove() {
     const allSquares = document.querySelectorAll(".singleSquare")
@@ -220,56 +177,13 @@ function checkWin() {
     })
 
     if (cntChecked == 9 && winAlready === false) {
+        winAlready = true
         displayTurn.textContent = "Draw!"
         allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
         //restart button
         document.querySelector(".restart").style.display = 'block'
         return true
     }
-
-    // winningCombos.forEach(array => {
-    //     const circleWins = array.every(indexCell =>
-    //         allSquares[indexCell].firstChild?.classList.contains('circle')
-    //     )
-
-    //     const crossWins = array.every(indexCell =>
-    //         allSquares[indexCell].firstChild?.classList.contains('cross')
-    //     )
-
-    //     const isDraw = [...allSquares].every(index =>
-    //         allSquares[index].classList.contains('circle')
-    //         ||
-    //         allSquares[index].classList.contains('cross')
-    //     )
-    //     if (circleWins) {
-    //         // displayTurn.textContent = "Circle Wins!"
-    //         winAlready = true
-    //         displayTurn.textContent = "Doge Wins!"
-    //         allSquares.forEach(square => square.replaceWith(square.cloneNode(true))) //xóa hết các event listener của các square
-    //         //restart button
-    //         document.querySelector(".restart").style.display = 'block'
-    //         console.log("aaaaa");
-    //         return
-    //     }
-    //     else if (crossWins) {
-    //         // displayTurn.textContent = "Cross Wins!"
-    //         winAlready = true
-    //         displayTurn.textContent = "Cat Wins!"
-    //         allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
-    //         //restart button
-    //         document.querySelector(".restart").style.display = 'block'
-    //         console.log("bbbbb");
-    //         return
-    //     }
-    //     // cntChecked === 9 && !circleWins && !crossWins
-    //     else if (isDraw) {
-    //         displayTurn.textContent = "Draw!"
-    //         allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
-    //         //restart button
-    //         document.querySelector(".restart").style.display = 'block'
-    //         return
-    //     }
-    // })
 }
 
 function clearBoard() {
